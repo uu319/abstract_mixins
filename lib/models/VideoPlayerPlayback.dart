@@ -5,7 +5,7 @@ abstract class PlaybackFunctions {
   void setPlaybackSpeed(VideoPlayerController controller, double speed);
 }
 
-mixin VideoPlayerPlaybackMixin<T extends StatefulWidget> on State<T>
+mixin VideoPlayerPlayback<T extends StatefulWidget> on State<T>
     implements PlaybackFunctions {
   void onSetPlaybackSpeed(VideoPlayerController? controller, double speed) {
     if (controller!.value.isInitialized) {

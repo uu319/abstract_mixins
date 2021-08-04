@@ -5,7 +5,7 @@ abstract class PlaybackFunctions {
   void pause(VideoPlayerController controller);
 }
 
-mixin VideoPlayerPauseMixin<T extends StatefulWidget> on State<T>
+mixin VideoPlayerPause<T extends StatefulWidget> on State<T>
     implements PlaybackFunctions {
   void onPause(VideoPlayerController? controller) {
     if (controller!.value.isInitialized) {

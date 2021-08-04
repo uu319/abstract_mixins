@@ -12,8 +12,8 @@ class MainVideoPlayer extends StatefulWidget {
 
 class _MainVideoPlayerState extends VideoPlayerBase<MainVideoPlayer>
     with
-        VideoPlayerPlaybackMixin<MainVideoPlayer>,
-        VideoPlayerPauseMixin<MainVideoPlayer> {
+        VideoPlayerPlayback<MainVideoPlayer>,
+        VideoPlayerPause<MainVideoPlayer> {
   @override
   void pause(VideoPlayerController controller) {
     controller.pause();

@@ -5,7 +5,7 @@ abstract class BaseFunctions {
   void play(VideoPlayerController controller);
 }
 
-abstract class VideoPlayerBase<T extends StatefulWidget> extends State<T>
+class VideoPlayerBase<T extends StatefulWidget> extends State<T>
     implements BaseFunctions {
   VideoPlayerController? controller;
 
@@ -19,15 +19,32 @@ abstract class VideoPlayerBase<T extends StatefulWidget> extends State<T>
       });
   }
 
-  void onPlay(VideoPlayerController? controller) {
-    if (controller!.value.isInitialized) {
-      play(controller);
-    }
-  }
-
   @override
   void dispose() {
     super.dispose();
     controller!.dispose();
+  }
+
+  @override
+  void play(VideoPlayerController controller) {
+    print('Playing');
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Unimplemented.'),
+      ),
+      body: Center(
+        child: Text('Implement this screen.'),
+      ),
+    );
+  }
+
+  void onPlay(VideoPlayerController? controller) {
+    if (controller!.value.isInitialized) {
+      play(controller);
+    }
   }
 }
